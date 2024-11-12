@@ -57,6 +57,9 @@ app.post("/login", async (req, res) => {
     .status(200)
     .json({ message: "登录成功", code: 200, token, username: user.username });
 });
+app.get("/", (req, res) => {
+	res.send("hello");
+});
 
 app.get("/verifyToken", verifyToken, (req, res) => {
   res.status(200).json({
